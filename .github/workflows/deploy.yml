@@ -24,7 +24,7 @@ jobs:
       - run: echo "${{ secrets.PRIVATE_KEY }}" > "$HOME/.ssh/key"
       - run: chmod 600 "$HOME/.ssh/key"
       # Build
-      - run: yarn install
-      - run: yarn run build
+      # - run: yarn install
+      # - run: yarn run build
       # Deploy
-      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@92.255.107.156:/leadersHack/frontend/
+      - run: rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@92.255.107.156:/leadersHack/frontend/
