@@ -1,5 +1,5 @@
 # pull official base image
-FROM node:18
+FROM node:latest
 
 # set working directory
 WORKDIR /app
@@ -11,6 +11,7 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY yarn.lock ./
 RUN yarn install --silent
+RUN yarn install react-scripts@3.4.1 -g --silent
 
 # add app
 COPY . ./
