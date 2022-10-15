@@ -27,4 +27,4 @@ jobs:
       - run: yarn install
       - run: yarn run build
       # Deploy
-      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@92.255.107.156:leadersHack/frontend
+      - run: cd build && rsync -e "ssh -i $HOME/.ssh/key -o StrictHostKeyChecking=no" --archive --compress --delete . root@92.255.107.156:/leadersHack/frontend/
